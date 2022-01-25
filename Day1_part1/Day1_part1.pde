@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-String filebase = new String("C:\\Users\\jsh27\\OneDrive\\Documents\\GitHub\\AoC2021\\DayXX\\data\\mydata");
+String filebase = new String("C:\\Users\\jsh27\\OneDrive\\Documents\\GitHub\\AoC2017\\Day1_part1\\data\\mydata");
 
 //ArrayList<String> fieldLines = new ArrayList<String>();
 //int numFieldLines=0;
@@ -37,6 +37,33 @@ void setup() {
   
   }
   
+  String s=input.lines.get(0);
+  
+  int total=0;
+  int midway=s.length()/2;
+  int pair=0;
+  
+  println("LEN:"+s.length()+" MID:"+midway);
+  
+  for (i=0;i<s.length()-1;i++)
+  {
+  
+    pair=i+midway;
+    if (pair>=s.length())
+    {
+      pair=pair-s.length();
+    }
+    if (s.charAt(i)==s.charAt(pair))
+    {
+      total+=Character.getNumericValue(s.charAt(i));
+    }
+  }
+  
+  //if (s.charAt(i)==s.charAt(0))
+  //{
+  //  total+=Character.getNumericValue(s.charAt(i));
+  //}
+  println("Total:"+total);
 }
 
 void printMasterList()
